@@ -1,37 +1,85 @@
+
 let cantLibros = parseInt (prompt("Cuantos libros deseas comprar?"))
 
-let libro1 = parseFloat (prompt("¿Cuánto cuesta el primer libro que quieres comprar?"))
-let libro2 = parseFloat (prompt("¿Cuánto cuesta el segundo libro que quieres comprar?"))
+// Acumulador de compra
+let compra = 0
 
-// acá se sumarían el costo de los libros agregados en el promt por el usuario
-
-sumarLibros = (primerLibro, segundoLibro) => {
-    let sumando = primerLibro + segundoLibro
-    return sumando
+// Funcion par añadir valor a compra
+const sumarLibros = (adicional) => {
+    compra += adicional
 }
-/*
- acá me gustaría que en la funcion de arriba desarrollar un proceso que según la cantidad de libros que se pongan en el carrito sea la suma del mismo, intente algo como lo de abajo pero no me respondia
- 
-let sumarLibros= 0;
-let libro;
-for (let i=1; i >= cantLibros; i++){
-    let libro = parseInt (prompt("¿Cuanto cuesta el libro "+i+ " que desas comprar?"));
-    let sumarLibros = sumarLibros + libro
-    
-}
-*/
 
-let compra = sumarLibros (libro1, libro2);
-console.log ('Haz efectuado la compra de los libros. La misma te salió $ '+compra )
+// Repito por cada libro ingresado
+for(let i = 1; i <= cantLibros; i++){
+    let libro = parseFloat (prompt("¿Cuánto cuesta el libro nro" + i + "?"))
+    sumarLibros(libro)
+}
 
 //descuento en compras mayores a $1000
-if (compra>1000){
+if ( compra >1000){
     let descuentoCompra = compra*0.90 ; //forma de calcular el 10% en lugar de regla de 3 simples
-    console.log ("Por el monto de tu compra te hicimos un descuento del 10% quedando el total $ " +descuentoCompra)
+    console.log ("Por el monto de tu compra te hicimos un descuento del 10% quedando el total $ " + descuentoCompra)
 }
 else {
-    console.log ("Muchas gracias por su compra! Su monto no cuenta con reintegro")
+    console.log ('Haz efectuado la compra de los libros. La misma te salió $ '+ compra )
 }
+
+
+//constructor de creación de libros
+
+class Libros {
+    constructor (id, nombre, autor, precio, descripcion){
+        this.id = id;
+        this.nombre = nombre.toLowerCase();
+        this.autor = autor.toLowerCase();
+        this.precio = precio;
+        this.descripcion = descripcion;
+        this.vendido = false
+    }
+aumentarLibro (){
+  this.precio *=  1.10
+}
+venderLibro () {
+    this.vendido = true
+}
+enviarDomicilio (){
+    this.precio += 300
+}
+mostrarLibro (){
+    console.log ("Este libro "+ this.nombre+ " tiene un valor de $ " +this.precio)
+}
+ 
+ 
+
+}
+
+//creación de libros
+
+const libro1 = new Libros (1, "Mi planta naranja lima", "jose mauro de vasconcelos", 300, "Este libro describe como un niño a través de sus experiencias va asumiendo las consecuencias de su vida" );
+libro1.mostrarLibro();
+
+const libro2 = new Libros (2, "El principito", "Antoine de Saint-Exupéry" , 350, "El principito trata de la historia de un pequeño príncipe que parte de su asteroide a una travesía por el universo, en la cual descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad.");
+
+const libro3 = new Libros (3, "Los hermanos Karamazov"," fiodor dotoievski", 260, "Los hermanos Karamazov es una novela filosófica y psicológica ambientada en la Rusia del siglo XIX, que entra profundamente en los debates éticos de Dios, el libre albedrío y la moralidad.");
+
+console.log (libro1)
+console.log (libro2)
+console.log (libro3)
+
+libro2.aumentarLibro();
+console.log(libro2);
+
+libro2.enviarDomicilio();
+libro2.venderLibro();
+console.log(libro2);
+
+
+
+
+
+ 
+    
+
 
 
 
