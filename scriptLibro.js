@@ -69,16 +69,32 @@ console.log (libro3)
 libro2.aumentarLibro();
 console.log(libro2);
 
-libro2.enviarDomicilio();
+
 libro2.venderLibro();
 console.log(libro2);
 
 
 
+alert ("Ingresa tu libro así ampliamos nuestra stock")
+let id2 = parseInt(prompt("Ingrese ID de su libro a ingresar"));
+let nombre2 = prompt ("Ingrese nombre de su libro");
+let autor2 = prompt ("Ingrese nombre del autor del libro");
+let precio2= parseFloat(prompt("Ingrese precio de su libro"));
+let descripcion2 = prompt ("Ingrese descripción de su libro");
 
 
- 
-    
+
+let newBook = new Libros (id2, nombre2, autor2, precio2, descripcion2);
+
+console.log (newBook)
+
+
+
+
+
+
+
+
 
 
 
