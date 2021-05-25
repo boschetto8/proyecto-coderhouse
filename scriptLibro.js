@@ -74,6 +74,16 @@ libro2.venderLibro();
 console.log(libro2);
 
 
+arrayLibros = [];
+
+
+agregarLibrosAlArray = (item) => {
+    arrayLibros.push (item)
+};
+agregarLibrosAlArray(libro1);
+agregarLibrosAlArray(libro2);
+agregarLibrosAlArray(libro3);
+
 
 alert ("Ingresa tu libro así ampliamos nuestra stock")
 let id2 = parseInt(prompt("Ingrese ID de su libro a ingresar"));
@@ -87,6 +97,30 @@ let descripcion2 = prompt ("Ingrese descripción de su libro");
 let newBook = new Libros (id2, nombre2, autor2, precio2, descripcion2);
 
 console.log (newBook)
+
+
+agregarLibrosAlArray(newBook);
+
+console.log (arrayLibros);
+
+
+// ordenar libros en array de menor precio a mayor
+
+function ordenarArrayLibros() {
+    arrayLibros.sort(function(a, b) {
+        return a.precio - b.precio
+    });
+    }
+    
+    ordenarArrayLibros();
+
+    console.log (arrayLibros);
+
+//
+    for (const item of arrayLibros){
+        console.log (item.nombre);
+        console.log (item.autor)
+    }
 
 
 
