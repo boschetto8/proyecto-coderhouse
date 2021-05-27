@@ -1,4 +1,4 @@
-arrayDeContactos = []
+arrayDeContactos = [];
 
 class Contacto {
  constructor (nombre, email, direccion, mensaje){
@@ -12,11 +12,11 @@ class Contacto {
 
 
 
-let nombre = prompt("Cual es su nombre?");
-let email = prompt("Cual es su correo electronico?");
-let direccion = prompt("Cual es su direccion?");
-let mensaje = prompt("Deje un mensaje para la pagina");
-contacto1 = new Contacto (nombre, email, direccion, mensaje);
+let nombre1 = prompt("Cual es su nombre?");
+let email1 = prompt("Cual es su correo electronico?");
+let direccion1 = prompt("Cual es su direccion?");
+let mensaje1 = prompt("Deje un mensaje para la pagina");
+contacto1 = new Contacto (nombre1, email1, direccion1, mensaje1);
 
 agregarArrayDeContacto = (cont) => {
 arrayDeContactos.push (cont)

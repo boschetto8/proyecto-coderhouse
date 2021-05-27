@@ -1,30 +1,3 @@
-
-let cantLibros = parseInt (prompt("Cuantos libros deseas comprar?"))
-
-// Acumulador de compra
-let compra = 0
-
-// Funcion par añadir valor a compra
-const sumarLibros = (adicional) => {
-    compra += adicional
-}
-
-// Repito por cada libro ingresado
-for(let i = 1; i <= cantLibros; i++){
-    let libro = parseFloat (prompt("¿Cuánto cuesta el libro nro" + i + "?"))
-    sumarLibros(libro)
-}
-
-//descuento en compras mayores a $1000
-if ( compra >1000){
-    let descuentoCompra = compra*0.90 ; //forma de calcular el 10% en lugar de regla de 3 simples
-    console.log ("Por el monto de tu compra te hicimos un descuento del 10% quedando el total $ " + descuentoCompra)
-}
-else {
-    console.log ('Haz efectuado la compra de los libros. La misma te salió $ '+ compra )
-}
-
-
 //constructor de creación de libros
 
 class Libros {
@@ -66,10 +39,6 @@ console.log (libro1)
 console.log (libro2)
 console.log (libro3)
 
-libro2.aumentarLibro();
-console.log(libro2);
-
-
 libro2.venderLibro();
 console.log(libro2);
 
@@ -83,7 +52,6 @@ agregarLibrosAlArray = (item) => {
 agregarLibrosAlArray(libro1);
 agregarLibrosAlArray(libro2);
 agregarLibrosAlArray(libro3);
-
 
 alert ("Ingresa tu libro así ampliamos nuestra stock")
 let id2 = parseInt(prompt("Ingrese ID de su libro a ingresar"));
@@ -116,11 +84,35 @@ function ordenarArrayLibros() {
 
     console.log (arrayLibros);
 
-//
-    for (const item of arrayLibros){
-        console.log (item.nombre);
-        console.log (item.autor)
-    }
+
+const carritoLibros = [];
+
+agregarCarrito1 = () => {
+carritoLibros.push (libro1)
+};
+
+agregarCarrito2 = () => {
+    carritoLibros.push (libro2)
+    };
+
+    agregarCarrito3 = () => {
+        carritoLibros.push (libro3)
+        };
+verCarrito = () => {
+    let total = 0;
+    for (item of carritoLibros){
+        console.log ("nombre del libro: " +item.nombre+ " tiene un costo de $ "+item.precio )
+        total += item.precio;
+        }
+        if (total>1000){
+         let descuentoCompra = total*0.90 ; //forma de calcular el 10% en lugar de regla de 3 simples
+            console.log ("Por el monto de tu compra te hicimos un descuento del 10% quedando el total $ " + descuentoCompra)
+        } else{
+console.log ("El precio total de su compra es $ "+total )
+}}
+
+
+
 
 
 
