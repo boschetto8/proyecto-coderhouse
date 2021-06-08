@@ -66,7 +66,7 @@
 <section class="form5 cid-sxJ6lMoNA3" id="form5-r">
     
     
-    <div class="container-fluid">
+    <div class="container-fluid" >
         <div class="mbr-section-head">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
                 <strong>Contacto</strong></h3>
@@ -74,28 +74,28 @@
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                <form action="./enviarformulario" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="Y+2ZTOyouh/1cCGCUDZXpGhoFtda2yMtYcriNgLXu7b5INkSimM2uWQmV4ZPhipuSat+xwWfdzgh4N9AgjoPeu1SiHHEZZ36Q6bgfgrxTPDd+Zklo1WuX0gtuJeh1JK2">
+                <form action="./enviarformulario" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name" id="formu2"><input type="hidden" name="email" data-form-email="true" value="Y+2ZTOyouh/1cCGCUDZXpGhoFtda2yMtYcriNgLXu7b5INkSimM2uWQmV4ZPhipuSat+xwWfdzgh4N9AgjoPeu1SiHHEZZ36Q6bgfgrxTPDd+Zklo1WuX0gtuJeh1JK2">
                     <div class="row">
                         <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Muchas gracias, pronto responderemos su consulta</div>
                         <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some
                             problem!</div>
                     </div>
-                    <div class="dragArea row">
+                    <div class="dragArea row" id="formu">
                         <div class="col-md col-sm-12 form-group" data-for="name">
-                            <input type="text" name="name" placeholder="Nombre" data-form-field="name" class="form-control" value="" id="name-form5-r">
+                            <input type="text" name="name" placeholder="Nombre" data-form-field="name" class="form-control" id="nombre">
                         </div>
                         <div class="col-md col-sm-12 form-group" data-for="email">
-                            <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control" value="" id="email-form5-r">
+                            <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control"  id="correo">
                         </div>
                         <div class="col-12 form-group" data-for="text">
-                            <input type="text" name="text" placeholder="Dirección" data-form-field="text" class="form-control" value="" id="url-form5-r">
+                            <input type="text" name="text" placeholder="Dirección" data-form-field="text" class="form-control"  id="direccion">
                         </div>
-                        <div class="col-12 form-group" data-for="textarea">
-                            <textarea name="textarea" placeholder="Mensaje" data-form-field="textarea" class="form-control" id="textarea-form5-r"></textarea>
+                        <div class="col-12 form-group" data-for="text">
+                            <input type="text" name="mensaje" placeholder="Mensaje" data-form-field="text" class="form-control" id="mensaje">
                         </div>
                         
-                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"> <button type="button" class="btn btn-primary display-4" onclick="agregarArrayDeContacto()"> <a href= "./enviarformulario.html">Enviar
-                        </button></div>
+                       <!--    <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"> <button type="button" class="btn btn-primary display-4" onclick="agregarArrayDeContacto()"> <a href= "./enviarformulario.html">Enviar
+                        </button></div> -->
                     </div>
                 </form>
             </div>
