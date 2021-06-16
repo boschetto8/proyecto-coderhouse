@@ -61,19 +61,19 @@ crearArticulo.innerHTML = `
                                     <p class="price mbr-fonts-style display-2">$${libro.precio}</p>
                                     <div class="mbr-section-btn"><a class="btn btn-primary display-4" id="id-${libro.id}">Comprar</a></div>
                                 </div>`;                              
-articulos.appendChild(crearArticulo);
+seccion.appendChild(crearArticulo);
 
 //Función para agregar items al carrito
 let botonComprar = document.getElementById ("id-"+libro.id);
 botonComprar.addEventListener('click', () => {
     console.log("Se agrego al carrito el libro "+libro.nombre +" que tiene un precio de $ "+libro.precio )
     carritoLibros.push(libro)});
+})
        
  // constante para crear en el storage un session de la compra
     const guardarTemporal = (clave, valor) => {sessionStorage.setItem(clave, valor)};
 //Agregar al Session Storage los libros del carrito
     librosAgregados = () => {
         guardarTemporal ('book', JSON.stringify(carritoLibros))
-    }
-    });
+    };
 
