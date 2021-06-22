@@ -1,3 +1,4 @@
+
 //Array de libros
 let arrayLibros = [
     {   id:0, 
@@ -23,17 +24,22 @@ let arrayLibros = [
     }
 ]
 ;
+let carritoLibros = [];
+let carritoFinal = [];
+$(window).on('load', () => {
+    console.log('Pagina cargada');
+    
+
 
 
 //declara array de cargar las compras
-let carritoLibros = [];
+
 
 let miTabla = document.createElement("table");
 miTabla.setAttribute("class", "table table-dark");
 let tablaContenedor = document.createElement("tbody")
 let verListado = document.getElementById('verLibros')
 
-let carritoFinal = [];
 
 let creaElementos = () => {
  carritoLibros.forEach (libro => {
@@ -56,13 +62,13 @@ let creaElementos = () => {
     //Este evento al darle Click remueve de la lista y quita del array el elemento removido
     botonRemover.addEventListener('click', () => {
     fila.parentNode.removeChild(fila);
-    let final = carritoLibros.filter (c => c.id != libro.id);
+    const final = carritoLibros.filter (c => c.id != libro.id);
      // acá filtramos el boton que dejamos de tocar
     final.forEach (final => {
     carritoFinal.push(final)});
     console.log (carritoFinal);
     librosAgregados(); //función para enviar los libros al storage Session
- 
+    
 }); 
     tablaContenedor.appendChild(fila);
     miTabla.appendChild(tablaContenedor);
@@ -71,17 +77,18 @@ let creaElementos = () => {
    
 })}
 // traemos el div fuera de la función para que aplique en las primeras lineas de la función
-let finPagina = document.getElementById('compra');
+let finPagina = $('#compra');
 
 verCarrito = () => {    
         tablaContenedor.innerHTML= '';
         finPagina.innerHTML= '';             
        creaElementos();
-       let botonFinalizar = document.createElement('div');
-       finPagina.appendChild(botonFinalizar);
-        botonFinalizar.innerHTML = `<div class='btn btn-primary'> Finalizar Compra</div>`;
+      // let botonFinalizar = document.createElement('div');
+       $('#compra').append(`<div class='btn btn-primary' id='botonFinalizar'> Finalizar Compra
+       
+       </div>`);
        let total = 0;
-        botonFinalizar.addEventListener('click', () => {
+        $('#botonFinalizar').on('click', () => {
                     if (carritoFinal.length>0){
                     carritoFinal.forEach ( libro => { 
                     total += libro.precio;
@@ -92,7 +99,7 @@ verCarrito = () => {
                     })}
 
                 renderizarCarrito();
-                finPagina.removeChild(botonFinalizar);
+                $('#botonFinalizar').remove();
                 
                               
                 if (total>1000){
@@ -115,7 +122,7 @@ renderizarCarrito = () => {
 
 }
 
-
+})
 
 
     
