@@ -25,21 +25,14 @@ mostrarLibro (){
  
 }
 
-arrayLibros.forEach(element => {
-   console.log(element.precio)
-});
-
-//Recorremos los libros que tenemos en el ARRAY
-for (item of arrayLibros){
-console.log("El libro " +item.nombre+ " con ID  " +item.id+ " tiene un precio de $" +item.precio)}
-
-console.log(arrayLibros)
-
-
 //Tomamos del HTML un ID para generar etiquetas dinamicas
 const seccion = document.getElementById("articulos");
-//A través de un ForEach vamos creando dinamicamente todos los componentes/cards
-arrayLibros.forEach (libro => {
+//A través de un JSO estático incorporamos las CARDS al HTML dinámico
+
+let URLJSON = 'libros.json'
+  $.getJSON(URLJSON, function (respuesta, estado){
+        if (estado == 'success'){
+respuesta.arrayLibros.forEach (libro => {
 const crearArticulo = document.createElement("div");
 crearArticulo.innerHTML = `
             <div class="card-wrapper">
@@ -68,6 +61,12 @@ let botonComprar = document.getElementById ("id-"+libro.id);
 botonComprar.addEventListener('click', () => {
     console.log("Se agrego al carrito el libro "+libro.nombre +" que tiene un precio de $ "+libro.precio )
     carritoLibros.push(libro)});
+
+
+
+        
+    })}
+
 })
        
  // constante para crear en el storage un session de la compra

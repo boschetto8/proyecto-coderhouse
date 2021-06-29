@@ -1,6 +1,6 @@
 
 //Array de libros
-let arrayLibros = [
+/*let arrayLibros = [
     {   id:0, 
         nombre: "Mi planta naranja lima", 
         autor:"jose mauro de vasconcelos", 
@@ -22,7 +22,7 @@ let arrayLibros = [
         descripcion:"Los hermanos Karamazov es una novela filosófica y psicológica ambientada en la Rusia del siglo XIX, que entra profundamente en los debates éticos de Dios, el libre albedrío y la moralidad.",
         imagen: 'https://images-na.ssl-images-amazon.com/images/I/51bMDQ4iVsL._SX342_SY445_QL70_ML2_.jpg'
     }
-]
+]*/
 ;
 let carritoLibros = [];
 let carritoFinal = [];
@@ -65,7 +65,7 @@ let creaElementos = () => {
     const final = carritoLibros.filter (c => c.id != libro.id);
      // acá filtramos el boton que dejamos de tocar
     final.forEach (final => {
-    carritoFinal.push(final)});
+    carritoFinal.push   (final)});
     console.log (carritoFinal);
     librosAgregados(); //función para enviar los libros al storage Session
     
