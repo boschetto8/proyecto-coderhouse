@@ -10,7 +10,6 @@ class Contacto {
      this.direccion = direccion,
      this.mensaje = mensaje
  }
-
 }
 
 //ESTA FUNCIÓN ENVIA EL DATO DEL CONTACTO AL LOCAL STORAGE (CARGADO ANTERIORMENTE) 
@@ -26,21 +25,13 @@ arrayDeContactos.push(newContact)
 console.log(nombre+ ' se envio un correo a la siguiente dirección de email '+correo + ' para validar su identidad')
 guardarLocal('Contacto local', JSON.stringify(arrayDeContactos));
 
-
 }
 
 
-$('#formu').append(`<button class='btn btn-primary' id='botonContacto'>Enviar 
-
-</button>`)
-
+$('#formu').append(`<button class='btn btn-primary' id='botonContacto'>Enviar</button>`);
 $('#botonContacto').on('click', envioDatosContacto);
-
 
 //botonEnviarContacto.addEventListener("click", envioDatosContacto)
 guardarLocal = (clave, valor) => { localStorage.setItem (clave, valor)};
-
 console.log(arrayDeContactos)
-
-
 })

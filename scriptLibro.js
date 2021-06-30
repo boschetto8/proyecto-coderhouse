@@ -10,15 +10,8 @@ class Libros {
         this.imagen = imagen
         this.vendido = false
     }
-aumentarLibro (){
-  this.precio *=  1.10
-}
-venderLibro () {
-    this.vendido = true
-}
-enviarDomicilio (){
-    this.precio += 300
-}
+
+
 mostrarLibro (){
     console.log ("Este libro "+ this.nombre+ " tiene un valor de $ " +this.precio)
 }
@@ -27,11 +20,12 @@ mostrarLibro (){
 
 //Tomamos del HTML un ID para generar etiquetas dinamicas
 const seccion = document.getElementById("articulos");
-//A través de un JSO estático incorporamos las CARDS al HTML dinámico
+//A través de un JSON estático incorporamos las CARDS al HTML dinámico
 
 let URLJSON = 'libros.json'
   $.getJSON(URLJSON, function (respuesta, estado){
         if (estado == 'success'){
+            console.log ('cargar cards')
 respuesta.arrayLibros.forEach (libro => {
 const crearArticulo = document.createElement("div");
 crearArticulo.innerHTML = `
@@ -59,7 +53,7 @@ articulos.appendChild(crearArticulo);
 //Función para agregar items al carrito
 let botonComprar = document.getElementById ("id-"+libro.id);
 botonComprar.addEventListener('click', () => {
-    console.log("Se agrego al carrito el libro "+libro.nombre +" que tiene un precio de $ "+libro.precio )
+    console.log(`Se agrego al carrito ${libro.nombre} que tiene un precio de $ ${libro.precio}` )
     carritoLibros.push(libro)});
 
 
