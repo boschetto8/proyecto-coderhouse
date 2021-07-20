@@ -56,8 +56,4 @@ botonComprar.addEventListener('click', () => {
 
     
 
-    const bajarDelStorage = (clave, valor) => {sessionStorage.getItem(clave, valor)};
-    librosBajados = () => {
-            bajarDelStorage ('book', JSON.parse(carrito))
-            console.log(carrito)
-    };
+   
