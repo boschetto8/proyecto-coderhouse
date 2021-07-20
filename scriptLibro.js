@@ -1,35 +1,16 @@
-//constructor de creación de libros
-
-class Libros {
-    constructor (id, nombre, autor, precio, descripcion,imagen){
-        this.id = id;
-        this.nombre = nombre.toLowerCase();
-        this.autor = autor.toLowerCase();
-        this.precio = precio;
-        this.descripcion = descripcion;
-        this.imagen = imagen
-        this.vendido = false
-    }
-
-
-mostrarLibro (){
-    console.log ("Este libro "+ this.nombre+ " tiene un valor de $ " +this.precio)
-}
- 
-}
-
 //Tomamos del HTML un ID para generar etiquetas dinamicas
 const seccion = document.getElementById("articulos");
-//A través de un JSON estático incorporamos las CARDS al HTML dinámico
 
+//A través de un JSON estático incorporamos las CARDS al HTML dinámico
 let URLJSON = 'libros.json'
   $.getJSON(URLJSON, function (respuesta, estado){
         if (estado == 'success'){
             console.log ('cargar cards')
 respuesta.arrayLibros.forEach (libro => {
 const crearArticulo = document.createElement("div");
+//se crearán las cards correspondientes según cada item del JSON estático
 crearArticulo.innerHTML = `
-            <div class="card-wrapper">
+            <div class="card-wrapper" id="card-${libro.id}">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-4">
                         <div class="image-wrapper">
@@ -54,7 +35,10 @@ articulos.appendChild(crearArticulo);
 let botonComprar = document.getElementById ("id-"+libro.id);
 botonComprar.addEventListener('click', () => {
     console.log(`Se agrego al carrito ${libro.nombre} que tiene un precio de $ ${libro.precio}` )
-    carritoLibros.push(libro)});
+    carritoLibros.push(libro);
+    $(`#card-${libro.id}`).toggle() //elimina los productos borrados al carrito
+    librosAgregados()// los libros se van agregado al session Storage una vez clickeados en comprar
+});
 
 
 
@@ -67,6 +51,13 @@ botonComprar.addEventListener('click', () => {
     const guardarTemporal = (clave, valor) => {sessionStorage.setItem(clave, valor)};
 //Agregar al Session Storage los libros del carrito
     librosAgregados = () => {
-        guardarTemporal ('book', JSON.stringify(carritoFinal))
+        guardarTemporal ('book', JSON.stringify(carritoLibros))
     };
 
+    
+
+    const bajarDelStorage = (clave, valor) => {sessionStorage.getItem(clave, valor)};
+    librosBajados = () => {
+            bajarDelStorage ('book', JSON.parse(carrito))
+            console.log(carrito)
+    };

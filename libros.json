@@ -5,7 +5,7 @@
             "autor":"jose mauro de vasconcelos", 
             "precio": 1200, 
             "descripcion":"Este libro describe como un niño a través de sus experiencias va asumiendo las consecuencias de su vida",
-            "imagen": "https://tiendaeureka.com.ar/wp-content/uploads/2020/08/mi-planta-de-naranja-lima.jpg"
+            "imagen": "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/029/689/products/naranja-lima1-e53d051f21d1a2af0416002664688088-640-0.png"
         },
         {   "id":1, 
             "nombre": "El principito", 
@@ -20,6 +20,27 @@
             "precio": 1360, 
             "descripcion":"Los hermanos Karamazov es una novela filosófica y psicológica ambientada en la Rusia del siglo XIX, que entra profundamente en los debates éticos de Dios, el libre albedrío y la moralidad.",
             "imagen": "https://images-na.ssl-images-amazon.com/images/I/51bMDQ4iVsL._SX342_SY445_QL70_ML2_.jpg"
+        },
+        {   "id":3, 
+            "nombre": "2666", 
+            "autor":"Roberto Bolaño", 
+            "precio": 2300, 
+            "descripcion":"Es la historia de cinco profesores universitarios críticos de la obra del desconocido y misterioso escritor alemán Benno Von Archimboldi, del que no sabe nada ni su editor, solo que es un hombre muy alto. ... En esta búsqueda entran historias y personajes que los llevan a México, a Santa Teresa, a buscar al escritor",
+            "imagen": "https://1.bp.blogspot.com/-0RFs6WeNku4/V7zRiNRbzxI/AAAAAAAAAo0/WIxB2tvwHmEThgk1vqS968oW6B84IiyAACLcB/s1600/2666.jpg"
+        },
+        {   "id":4, 
+            "nombre": "La invención de Morel", 
+            "autor":"Adolfo Bioy Casares", 
+            "precio": 750, 
+            "descripcion":"El escritor argentino Adolfo Bioy Casares, se plantea el tema del eterno regreso y se despliega una discusión sobre la percepción del hombre, al ubicarse en el mundo del que forma parte.",
+            "imagen": "https://www.planetadelibros.com/usuaris/libros/fotos/49/m_libros/portada_la-invencion-de-morel_adolfo-bioy-casares_201505261221.jpg"
+        },
+        {   "id":5, 
+            "nombre": "Bodas de Sangre", 
+            "autor":"Federico Garcia Lorca", 
+            "precio": 1250, 
+            "descripcion":"El tema principal tratado en este gran drama es la vida y la muerte. ... Es constante en la obra lorquiana la obsesión por el puñal, el cuchillo y la navaja, que en Bodas de sangre atraen la fascinación y, a la vez, presagian la muerte.",
+            "imagen": "https://i.pinimg.com/originals/c7/53/17/c75317368a827d4e85bd5f36b0228d77.jpg"
         }
     ]
 }
