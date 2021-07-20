@@ -20,7 +20,7 @@ const correo =$('#correo').val();
 const direccion = $('#direccion').val();
 const mensaje = $('#mensaje').val();
 
-
+//comprobaciones que los campos no esten vacios y comprobación de email
 if((!nombre == '') && (!correo == '') && (!direccion == '')&& (!mensaje == '')){
 if (validarEmail(correo)) {
 let newContact = new Contacto (nombre, correo, direccion, mensaje);
@@ -55,11 +55,11 @@ $('#botonContacto').on('click', envioDatosContacto)
 guardarLocal = (clave, valor) => { localStorage.setItem (clave, valor)};
 console.log(arrayDeContactos)
 })
-
+//funcion para validar el email
 function validarEmail(valor) {
     if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
      console.log("La dirección de email " + valor + " es correcta!.");
-     return true
+     
     } else {
      console.log("La dirección de email es incorrecta!.");
      return
