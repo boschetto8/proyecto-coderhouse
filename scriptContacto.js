@@ -30,14 +30,12 @@ arrayDeContactos.push(newContact)
 envioContacto.innerHTML = `<h4>${nombre} se envio un correo a la siguiente dirección de email ${correo} para validar su identidad</h4>`
 guardarLocal('Contacto local', JSON.stringify(arrayDeContactos));
 
-
-console.log(nombre+ ' se envio un correo a la siguiente dirección de email '+correo + ' para validar su identidad')
 }
 else {
     envioContacto.innerHTML =  `<h4>La dirección de correo agregada es incorrecta</h4>`
 }}
 else {
-    envioContacto.innerHTML = `<h4>Debe llenar todos los campos para enviar el correo</h4>`
+    envioContacto.innerHTML = `<h4>Debe llenar todos los campos para enviar los datos</h4>`
 }
 
 }
